@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+li{
+  list-style: none;
+}
+.app{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.app .title{
+    font-size: 2rem;
+}
+.app .password-generator{
+    color: #25013C;
+    background-color: #A377BF;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #7D16BF;
+    width: 30%;
+}
+.app .password-generator p {
+    font-size: 16px;
+    margin: 0 auto;
+}
+.app .password-generator .length{
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+    background-color: rgba(300, 300, 300, .7);
+}
+.app .password-generator .btn{
+    background-color: #7D16BF;
+    margin-top: 15px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
