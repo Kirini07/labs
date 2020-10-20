@@ -93,6 +93,7 @@ form.addEventListener('submit', e =>{
     
     if(flag && validPass){
         console.log(authenticationData);
+        alert('Ssuccess check you\'r console!')
     }
 });
 
