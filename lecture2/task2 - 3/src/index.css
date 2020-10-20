@@ -41,6 +41,7 @@ body{
     transition: .5s;
 }
 .warning{
+    position: relative;
     background-color: inherit;
     font-size: 18px;
     padding: 10px 15px;
@@ -48,3 +49,12 @@ body{
     padding: 5px;
     color: #FF00AE;
 }
+.warning:after{
+    border: solid;
+    border-color: #FF00AE transparent;
+    border-width: 12px 6px 0 6px;
+    content: "";
+    left: 45%;
+    bottom: -12px;
+    position: absolute;
+  }
