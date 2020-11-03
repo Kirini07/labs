@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #dadada;
+  box-sizing: border-box;
+}
+.material-icons{
+  color: #dadada;
+}
+a{
+  text-decoration: none;
+}
+#root{
+  width: 100%;
+  height: 100vh;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.App {
+  height: 100vh;
+  width: 100%;
+  background: #160024;
+}
+
+/* HEADER */
+.app__header {
+  display: flex;
+  padding: 15px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #673ab7;
+}
+.app__header__title{
+  font-size: 2rem;
+}
+.app__header__filter-container__link{
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .4s opacity;
+  opacity: .6;
+}
+.app__header__filter-container__link:hover{
+  opacity: 1;
+  border-bottom: 2px solid #dadada;
+}
+.app__todo-list{
+  margin: 15px auto;
+  width: 80%;
+}
+.app__todo-list__item{
+  display: flex;
+  margin: 5px 0;
+  font-family: 'PT Serif', serif;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #7D16BF;
+  border-radius: 5px;
+}
+.app__todo-list__item_important{
+  font-weight: bold;
+  color: tomato;
+  font-size: 22px;
+}
+.app__todo-list__item__icons span{
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 5px;
+  transition: opacity .4s, transform .1s ;
+  opacity: .6;
+}
+.app__todo-list__item__icons span:hover{
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+
+/* ***************** */
