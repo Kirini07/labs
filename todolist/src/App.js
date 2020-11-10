@@ -32,6 +32,8 @@ export class App extends Component {
   }
   render() {
     return (
+      <>
+      {Math.random()*100 < 20 ? new Error('Error!') :
       <div className='App'>
         {console.log('---> render()')}
         <Header/>
@@ -42,6 +44,8 @@ export class App extends Component {
         </div>
         <List/>
     </div>
+    }
+    </>
     );
   }
 }
