@@ -24,7 +24,7 @@ export class App extends Component {
   componentDidMount(){
     console.log('---> componentDidMount()')
     this.clock()
-    // this.interval = setInterval(this.clock, 1000);
+    this.interval = setInterval(this.clock, 1000);
   }
   componentWillUnmount(){
     console.log('---> componentWillUnmount()')
