@@ -37,7 +37,7 @@ export class App extends Component {
       <div className='App'>
         {console.log('---> render()')}
         <Header/>
-        {/* <Clock time={this.state.time}/> */}
+        <Clock time={this.state.time}/>
         <div className='panels'>
           <AddPanel/>
           <SearchPanel/>
