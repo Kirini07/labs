@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 
 export default class AddPanel extends Component {
     state = {
-        input: '',
+        input: null,
         clazz: 'inputs-wrap'
     }
+
+    inputRef = React.createRef();
+
     onInputTextChangeHandler = (e) =>{
         this.setState({input: e.target.value});
     }
@@ -22,26 +25,32 @@ export default class AddPanel extends Component {
     }
     render() {
         return (
-                <div className={this.state.clazz}>
-                    <label 
-                    htmlFor='add' 
-                    className='inputs-wrap__label'
-                    >
-                        Add panel
-                        <span className="material-icons">
-                            add
-                        </span>
-                    </label>
-                    <input 
-                    onFocus={this.onFocusHandler}
-                    onChange={this.onInputTextHandler}
-                    onBlur={this.onFocusOutHandler}
-                    className='inputs-wrap__text-inputs'
-                    type='text'
-                    name='add'
-                    id='add'
-                    />
-                </div>
+                    <div className={this.state.clazz}>
+                        <label 
+                        htmlFor='add' 
+                        className='inputs-wrap__label'
+                        >
+                            Add panel
+                            <span className="material-icons panel-icon">
+                                add
+                            </span>
+                        </label>
+                        <input 
+                        onFocus={this.onFocusHandler}
+                        onChange={this.onInputTextChangeHandler}
+                        onBlur={this.onFocusOutHandler}
+                        className='inputs-wrap__text-inputs'
+                        type='text'
+                        name='add'
+                        id='add'
+                        ref={this.inputRef}
+                        />
+                        <p 
+                        className={this.state.input && 'value'}
+                        >
+                            {this.state.input && 'value: ' + this.state.input}
+                        </p>
+                    </div>
         )
     }
 }
