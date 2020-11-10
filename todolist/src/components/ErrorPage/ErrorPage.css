@@ -1,0 +1,26 @@
+.error-page{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #160024;
+}
+.error-page .error-header{
+    font-size: 3rem;
+    color: red;
+}
+.error-page .error-message{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-top: 50px;
+    background-color: #34104B;
+    font-size: 1.8rem;
+    color: #7D16BF;
+}
+.error-page .error-message span{
+    font-size: 3rem;
+    color: inherit;
+}
