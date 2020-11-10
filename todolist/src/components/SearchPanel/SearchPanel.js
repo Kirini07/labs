@@ -5,8 +5,9 @@ export default class SearchPanel extends Component {
         input: '',
         clazz: 'inputs-wrap'
     }
+    textRef = React.createRef();
     onInputTextChangeHandler = (e) =>{
-        this.setState({input: e.target.value});
+        this.setState({input: this.textRef.current.value});
     }
     onFocusHandler = () => {
         this.setState((state)=>({
@@ -28,19 +29,25 @@ export default class SearchPanel extends Component {
                 className='inputs-wrap__label'
                 >
                     Search Todo
-                <span className="material-icons">
+                <span className="material-icons panel-icon">
                     search
                 </span>
                 </label>
                 <input
                 onFocus={this.onFocusHandler}
-                onChange={this.onInputTextHandler}
+                onChange={this.onInputTextChangeHandler}
                 onBlur={this.onFocusOutHandler}
                 className='inputs-wrap__text-inputs'
                 type='text'
                 name='search'
                 id='search'
+                ref={this.textRef}
                 />
+                <p 
+                        className={this.state.input && 'value'}
+                        >
+                            {this.state.input && 'value ref: ' + this.state.input}
+                </p>
             </div>
         )
     }
