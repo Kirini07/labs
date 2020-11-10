@@ -1,0 +1,24 @@
+/* HEADER */
+.app__header {
+    display: flex;
+    padding: 15px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #673ab7;
+  }
+  .app__header__title{
+    font-size: 2rem;
+  }
+  .app__header__filter-container__link{
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    transition: .4s opacity;
+    opacity: .6;
+  }
+  .app__header__filter-container__link:hover{
+    opacity: 1;
+    border-bottom: 2px solid #dadada;
+  }

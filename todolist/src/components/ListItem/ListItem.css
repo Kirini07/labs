@@ -1,0 +1,28 @@
+.app__todo-list__item{
+    display: flex;
+    margin: 5px 0;
+    font-family: 'PT Serif', serif;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #7D16BF;
+    border-radius: 5px;
+  }
+  .app__todo-list__item_important{
+    font-weight: bold;
+    color: tomato;
+    font-size: 22px;
+  }
+  .app__todo-list__item__icons span{
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 5px;
+    transition: opacity .4s, transform .1s ;
+    opacity: .6;
+  }
+  .app__todo-list__item__icons span:hover{
+    opacity: 1;
+    transform: scale(1.2);
+  }
