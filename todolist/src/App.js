@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import './App.css';
 import { Header } from './components/Header/Header';
@@ -15,8 +16,56 @@ export class App extends Component {
   onSearch(obj){
 
   }
-  onAddTodo(obj){
-    console.log(obj);
+  onChangeAtribute = (attr, id) => {
+    this.setState((state) =>{
+      const newTaskList = [...state.tasks];
+      const idx = newTaskList.findIndex(e => e.id === id)
+      newTaskList[idx][attr] = !newTaskList[idx][attr];
+      return {
+        ...state,
+        tasks: newTaskList
+      }
+    })
+  }
+  onAddTask = ({title, color}) => {
+    this.setState(state => {
+      const newStateTaksList = [
+        ...state.tasks, 
+        {
+          title,
+          color: color || '#dadada',
+          important: false,
+          done: false,
+          id: uuidv4()
+        }
+      ]
+      return{
+        ...state,
+        tasks: newStateTaksList
+      }
+    })
+  }
+  onDeleteTask = id => {
+    this.setState(state => {
+      const newTaskList = [...state.tasks];
+      const idx = newTaskList.findIndex(e => e.id === id)
+      newTaskList.splice(idx, 1);
+      return{
+        ...state,
+        tasks: newTaskList
+      }
+    })
+  }
+  onEditTask = (id, title) => {
+    this.setState(state => {
+      const newTaskList = [...state.tasks];
+      const idx = newTaskList.findIndex(e => e.id === id)
+      newTaskList[idx].title = title
+      return{
+        ...state,
+        tasks: newTaskList
+      }
+    })
   }
   render() {
     return (
@@ -32,10 +81,15 @@ export class App extends Component {
           submitText='Search'
           iconText='search'
           />
-          <List/>
+          <List
+            onChangeAtribute={this.onChangeAtribute}
+            onDeleteTask={this.onDeleteTask}
+            taskList={this.state.tasks}
+            onEditTask={this.onEditTask}
+          />
           <Form 
           name='title'
-          onHandleSubmit={this.onAddTodo}
+          onHandleSubmit={this.onAddTask}
           panelName='Add task'
           submitText='Add task'
           iconText='add'

@@ -12,8 +12,10 @@
   }
   .app__todo-list__item_important{
     font-weight: bold;
-    color: tomato;
-    font-size: 22px;
+    font-size: 20px;
+  }
+  .app__todo-list__item_done{
+    text-decoration: line-through;
   }
   .app__todo-list__item__icons span{
     margin-right: 10px;
