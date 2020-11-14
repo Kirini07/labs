@@ -1,0 +1,8 @@
+.warning{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#190F00 ;
+    color: #F8B671;
+  }
