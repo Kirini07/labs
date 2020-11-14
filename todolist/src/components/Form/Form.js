@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Warning } from '../Warning/Warning';
 
 export class Form extends Component {
     state = {
@@ -69,7 +70,7 @@ export class Form extends Component {
                 </div>
                 {/* Warning */}
                 {this.state.warning &&
-                     <p>{this.state.warning}</p>
+                     <Warning>{this.state.warning}</Warning>
                 }
                 {/* Children */}
                 {this.props.children && 
