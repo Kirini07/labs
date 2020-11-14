@@ -54,7 +54,7 @@ export class Form extends Component {
                     >
                         {panelName}
                         <span className="material-icons panel-icon">
-                            add
+                            {iconText}
                         </span>
                     </label>
                     <input 
