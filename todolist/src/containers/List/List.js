@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListItem } from '../ListItem/ListItem'
+import { ListItem } from '../../components/ListItem/ListItem'
 
 import './List.css';
 

@@ -14,6 +14,11 @@
 a{
   text-decoration: none;
 }
+input[type="color" i] {
+  border: none;
+  outline: none;
+  appearance: none;
+}
 #root{
   width: 100%;
   height: 100vh;
@@ -31,9 +36,12 @@ body {
 }
 .panels{
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   margin: 10px auto;
   width: 60%;
+  margin-bottom: 20px;
 }
 
 
@@ -62,10 +70,9 @@ body {
 }
 
 .inputs-wrap {
-  width: 48%;
+  width: 100%;
   padding: 30px 0 0 0;
   position: relative;
-  margin-bottom: 10px;
 }
 
 .inputs-wrap:after, .inputs-wrap:before {
@@ -97,6 +104,34 @@ body {
   font-size: 12px;
   transform: translateY(0);
 }
-.value{
-  position: absolute;
+
+.todolist__add-form{
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.form-children{
+  margin-top: 15px;
+}
+.btn-submit{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #7D16BF;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin: 15px auto;
+  max-width: 50%;
+  border: none;
+  color: white;
+  transition: opacity .3s;
+  opacity: .8;
+}
+.btn-submit:hover{
+  opacity: 1;
+}
+.btn-submit:focus{
+  outline: none;
 }

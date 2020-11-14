@@ -1,50 +1,48 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import AddPanel from './components/AddPanel/AddPanel';
 import { Header } from './components/Header/Header';
-import { List } from './components/List/List';
-import SearchPanel from './components/SearchPanel/SearchPanel';
+import { List } from './containers/List/List';
 import { Clock } from './components/Clock/Clock';
+import { Form } from './components/Form/Form';
+import { SketchPicker } from 'react-color';
 
-function getFormattedTime() {
-  let time = new Date().toLocaleTimeString();
-  return time;
-}
 
 export class App extends Component {
   state = {
-    time: null
+    tasks: []
   }
-  clock = () => {
-    this.setState({
-      time: getFormattedTime()
-    })
-  };
-  componentDidMount(){
-    console.log('---> componentDidMount()')
-    this.clock()
-    this.interval = setInterval(this.clock, 1000);
+  onSearch(obj){
+
   }
-  componentWillUnmount(){
-    console.log('---> componentWillUnmount()')
-    clearInterval(this.interval);
+  onAddTodo(obj){
+    console.log(obj);
   }
   render() {
     return (
       <>
-      {/* {Math.random()*100 < 20 ? new Error('Error!') : */}
       <div className='App'>
-        {console.log('---> render()')}
-        <Header/>
-        <Clock time={this.state.time}/>
-        <div className='panels'>
-          <AddPanel/>
-          <SearchPanel/>
-        </div>
-        <List/>
-    </div>
-    {/* } */}
+          {console.log('---> render()')}
+          <Header/>
+          <Clock time={this.state.time}/>
+          <Form
+          name='search'
+          onHandleSubmit={this.onSearch}
+          panelName='Search task'
+          submitText='Search'
+          iconText='search'
+          />
+          <List/>
+          <Form 
+          name='title'
+          onHandleSubmit={this.onAddTodo}
+          panelName='Add task'
+          submitText='Add task'
+          iconText='add'
+          >
+            <SketchPicker inputType='color'/>
+          </Form>
+      </div>
     </>
     );
   }
