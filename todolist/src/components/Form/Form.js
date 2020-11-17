@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Warning } from '../Warning/Warning';
 
+import './Form.css';
+
 export class Form extends Component {
     state = {
         clazz: 'inputs-wrap'
@@ -13,7 +15,8 @@ export class Form extends Component {
     onColorChange = (color, e) =>{
          this.setState({ color: color.hex });
     }
-    onSubmit = (e) => {
+    onSubmit = this.props.validate 
+    ? (e) => {
         e.preventDefault();
         if(!this.state[this.props.name] || this.state[this.props.name].trim() === ''){
             this.setState({warning: `Field "${this.props.panelName}" should not be empty!`})
@@ -27,6 +30,17 @@ export class Form extends Component {
             delete res.warning;
             this.props.onHandleSubmit(res)
         }
+    } 
+    : (e) => {
+        e.preventDefault();
+        let res = {...this.state};
+        this.setState({
+            warning: null,
+            [this.props.name]: ''
+        })
+        delete res.clazz;
+        delete res.warning;
+        this.props.onHandleSubmit(res)
     }
     onFocusHandler = () => {
         this.setState((state)=>({
@@ -36,7 +50,7 @@ export class Form extends Component {
         )
     }
     onFocusOutHandler = (e) => {
-        if(e.target.value === '' && this.state.input === ''){
+        if(e.target.value === ''){
             this.setState({clazz: 'inputs-wrap'})
         }
     }
