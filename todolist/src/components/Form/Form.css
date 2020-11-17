@@ -1,0 +1,89 @@
+.inputs-wrap__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    transform: translateY(25px);
+    color: #e2e2e2;
+    transition: all 0.5s;
+  }
+  
+  .inputs-wrap__text-inputs{
+    position: relative;
+    background: transparent;
+    color: #dadada;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  
+  .inputs-wrap {
+    width: 100%;
+    padding: 30px 0 0 0;
+    position: relative;
+  }
+  
+  .inputs-wrap:after, .inputs-wrap:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #e2e2e2; 
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s;
+  }
+  
+  .inputs-wrap::after {
+    background-color: #7D16BF;
+    transform: scaleX(0);
+  }
+  
+  .is-active::after {
+    transform: scaleX(1);
+  }
+  
+  .is-active .inputs-wrap__label, .is-active .panel-icon {
+    color: #7D16BF;
+  }
+  
+  .is-completed .inputs-wrap__label {
+    font-size: 12px;
+    transform: translateY(0);
+  }
+  
+  .todolist__add-form{
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .form-children{
+    margin-top: 15px;
+  }
+  .btn-submit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #7D16BF;
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 15px auto;
+    max-width: 50%;
+    border: none;
+    color: white;
+    transition: opacity .3s;
+    opacity: .8;
+  }
+  .btn-submit:hover{
+    opacity: 1;
+  }
+  .btn-submit:focus{
+    outline: none;
+  }
+  
+  
